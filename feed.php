@@ -1,3 +1,4 @@
+<?php include_once('Koneksi.php');?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,12 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
 
-
-    <?php
-        session_start();
-        if (!isset($_SESSION['username']))
-            header('location:index.php');
-    ?>
+ 
 </head>
 <body>
     <nav class="navigation">
@@ -28,7 +24,7 @@
         <div class="navigation__column">
             <i class="fa fa-search"></i>
             <form action="feed.php" method="get">
-                <input type="text" placeholder="Search">
+                <input type="text" placeholder="Search" name ="search">
             </form>    
         </div>
         <div class="navigation__column">
@@ -59,10 +55,11 @@
     <main id="feed">
     <?php 
             if (isset($_GET['search'])) {
-                include 'connection.php';
+                include 'Koneksi.php';
                 $search = $_GET['search'];
-                $query = mysqli_query($conn, "SELECT * FROM photo JOIN USER USING(username) WHERE CAPTION LIKE '%$search%'");
+                $query = mysqli_query($koneksi, "SELECT * FROM photo JOIN USER USING(username) WHERE CAPTION LIKE '%$search%'");
                 $result = mysqli_num_rows($query);
+                
                 if ($result > 0) {
                     while ($res = mysqli_fetch_array($query)) { ?>
                         <div class="photo">
@@ -83,7 +80,7 @@
                                         <i class="fa fa-comment-o fa-lg"></i>
                                     </span>
                                 </div>
-                                <span class="photo__likes"><?php echo $res['likes'] ?> likes</span>
+                                <span class="photo__likes"><?php echo $res['like'] ?> likes</span>
                                 <!-- photo caption -->
                                 <ul class="photo__comments"> 
                                     <li class="photo__comment">
@@ -115,7 +112,7 @@
                     <span class="photo__location">Bestechung</span>
                 </div>
             </header>
-            <img src="images\ManchesterUnited.jpg" />
+            <img src=https://asset.indosport.com/article/image/q/80/289015/logo_manchester_united-169.jpg?w=750&h=423>
             <div class="photo__info">
                 <div class="photo__actions">
                     <span class="photo__action">
