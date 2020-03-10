@@ -10,11 +10,6 @@
     <link rel="stylesheet" href="css/styles.css">
 
 
-    <?php
-        session_start();
-        if (!isset($_SESSION['username']))
-            header('location:index.php');
-    ?>
 </head>
 <body>
     <nav class="navigation">
