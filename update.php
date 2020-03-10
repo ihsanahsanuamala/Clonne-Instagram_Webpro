@@ -1,7 +1,5 @@
 <?php
 session_start();
-
- 
 include_once('koneksi.php') ;
 
  
@@ -12,6 +10,7 @@ $bio = $_GET['bio'];
 $email = $_GET['email'];
 $phoneNumber =$_GET['phoneNumber'];
 $gender = $_GET['gender'];
+
 $username = $_GET['username'];
       
 
