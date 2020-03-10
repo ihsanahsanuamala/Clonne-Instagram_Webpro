@@ -45,7 +45,7 @@
                     </a>
                 </li>
                 <li class="navigation__list-item">
-                    <a href="profile.php" class="navigation__link">
+                    <a href="uploadfoto1.php" class="navigation__link">
                         <i class="fa fa-upload fa-lg"></i>
                     </a>
                 </li>
