@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="css/styles.css">
 
 
+    <?php
+        session_start();
+        if (!isset($_SESSION['username']))
+            header('location:index.php');
+    ?>
 </head>
 <body>
     <nav class="navigation">
@@ -88,6 +93,7 @@
                                 <ul class="photo__comments photo__add-comment-container">
                                     <li class="photo__comment">
                                         <span class="photo__comment-author">serranoarevalo</span> love this!
+                                        <span class="photo__comment-author">serranoarevalo</span> love this!
                                     </li>
                                 </ul>
                                 <span class="photo__time-ago">2 hours ago</span>
@@ -106,7 +112,7 @@
                 <img src="images/avatar.jpg" class="photo__avatar" />
                 <div class="photo__user-info">
                     <span class="photo__author">inthetiger</span>
-                    <span class="photo__location">Manchester United</span>
+                    <span class="photo__location">Bestechung</span>
                 </div>
             </header>
             <img src="images\ManchesterUnited.jpg" />
@@ -150,7 +156,7 @@
                 <img src="images/avatar.jpg" class="photo__avatar" />
                 <div class="photo__user-info">
                     <span class="photo__author">inthetiger</span>
-                    <span class="photo__location">Bukittinggi (Rancak Bana)</span>
+                    <span class="photo__location">Bestechung</span>
                 </div>
             </header>
             <img src="images/Pemandangan.jpg" />
